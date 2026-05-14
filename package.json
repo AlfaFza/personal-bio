@@ -1,0 +1,9 @@
+{
+  "name": "personal-feedback-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website with a backend contact form message store.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

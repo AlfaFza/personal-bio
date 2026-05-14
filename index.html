@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Little Page About Me</title>
+    <meta
+      name="description"
+      content="A personal page for honest feedback, small kindness, and email conversations."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Developer. Dreamer. Still learning life.</p>
+          <h1 id="page-title">Hi, I am here on Earth, trying to become better.</h1>
+          <p class="intro">
+            I build things, watch movies, play games, go outside, train in the gym,
+            and keep looking for more happiness. This is just a little website about
+            me, made with hope.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#feedback">Send me love</a>
+            <a class="button quiet" href="#about">Know me</a>
+          </div>
+        </div>
+
+        <div class="portrait-card" aria-label="Personal visual card">
+          <img
+            class="portrait-art"
+            src="assets/life-card.svg"
+            alt="A person standing on a small Earth under a warm sun"
+          />
+          <div class="sun"></div>
+          <div class="planet">
+            <span class="orbit one"></span>
+            <span class="orbit two"></span>
+            <span class="person"></span>
+          </div>
+          <p>single, healing, hopeful</p>
+        </div>
+      </section>
+
+      <section id="about" class="section-grid">
+        <article class="story">
+          <p class="section-kicker">My note</p>
+          <h2>I broke a lot, but I still want to smile.</h2>
+          <p>
+            If you found this page, you found a real person behind the screen. I
+            need kindness, honest words, and little reasons to keep growing. If I
+            should improve something, tell me gently. If you just want to say hello,
+            that also means a lot.
+          </p>
+        </article>
+
+        <div class="quick-facts" aria-label="Quick facts">
+          <div>
+            <span>Lives in</span>
+            <strong>Earth</strong>
+          </div>
+          <div>
+            <span>Heart status</span>
+            <strong>Still single</strong>
+          </div>
+          <div>
+            <span>Current mission</span>
+            <strong>Finding life</strong>
+          </div>
+          <div>
+            <span>Needs</span>
+            <strong>Love + peace</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="favorites" aria-labelledby="favorites-title">
+        <div class="section-heading">
+          <p class="section-kicker">Favorite things</p>
+          <h2 id="favorites-title">Small things that make me feel alive</h2>
+        </div>
+        <div class="favorite-list">
+          <article>
+            <span class="icon">Movie</span>
+            <h3>Movies</h3>
+            <p>I love watching stories, emotions, action, comedy, and anything that stays in the heart.</p>
+          </article>
+          <article>
+            <span class="icon">Game</span>
+            <h3>Gaming</h3>
+            <p>Games help me relax, compete, learn focus, and enjoy time with people.</p>
+          </article>
+          <article>
+            <span class="icon">Field</span>
+            <h3>Outdoor games</h3>
+            <p>I like fresh air, movement, and the feeling of being outside instead of only online.</p>
+          </article>
+          <article>
+            <span class="icon">Gym</span>
+            <h3>Gym</h3>
+            <p>Training helps me build strength, discipline, confidence, and a better version of myself.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="feedback" class="feedback-panel" aria-labelledby="feedback-title">
+        <div>
+          <p class="section-kicker">Talk to me</p>
+          <h2 id="feedback-title">What do you think about me?</h2>
+          <p>
+            Write something honest, kind, funny, or useful. When you hit the button,
+            the message will be saved safely for me to read.
+          </p>
+        </div>
+
+        <form class="feedback-form" id="feedbackForm">
+          <label>
+            Your name
+            <input name="name" type="text" placeholder="Your name" autocomplete="name" required />
+          </label>
+
+          <label>
+            Your email
+            <input
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label>
+            Your message
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Tell me what I should improve, or send me a little love..."
+              required
+            ></textarea>
+          </label>
+
+          <fieldset>
+            <legend>Message mood</legend>
+            <div class="mood-grid">
+              <label><input type="radio" name="mood" value="A little love" checked /> Love</label>
+              <label><input type="radio" name="mood" value="Honest feedback" /> Feedback</label>
+              <label><input type="radio" name="mood" value="Just saying hello" /> Hello</label>
+            </div>
+          </fieldset>
+
+          <button class="button primary form-button" type="submit">Send Message</button>
+          <p class="helper" id="helperText">
+            Your message is stored privately on this website backend.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
