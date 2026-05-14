@@ -4,6 +4,6 @@
   "private": true,
   "description": "Personal website with a backend contact form message store.",
   "scripts": {
-    "start": "node server.js"
+    "start": "node local-server.js"
   }
 }

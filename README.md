@@ -36,7 +36,7 @@ Do not open `index.html` directly when testing the form. The backend must be run
 
 ## Deploy To Vercel
 
-This project includes a Vercel API route at `api/messages.js`.
+This project includes a Vercel API route at `api/messages.js`. The `local-server.js` file is only for running the message store on your computer.
 
 Important: Vercel does not permanently store writes to local JSON files. For production message storage, connect a hosted database such as Vercel KV, Vercel Postgres, or Supabase and update `api/messages.js` to save there.
 
