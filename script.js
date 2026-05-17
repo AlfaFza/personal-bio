@@ -17,20 +17,14 @@ form.addEventListener("submit", async (event) => {
 
   submitBtn.textContent = "Sending...";
   submitBtn.disabled = true;
-  helperText.textContent = "Sending your message securely...";
 
-  const formData = new FormData(form);
-
-  const payload = {
-    name: formData.get("name").trim(),
-    email: formData.get("email").trim(),
-    mood: formData.get("mood"),
-    message: formData.get("message").trim(),
-  };
+  helperText.textContent =
+    "Sending your message securely...";
 
   try {
-    // Send to Web3Forms
-    const web3Response = await fetch(
+    const formData = new FormData(form);
+
+    const response = await fetch(
       "https://api.web3forms.com/submit",
       {
         method: "POST",
@@ -38,31 +32,16 @@ form.addEventListener("submit", async (event) => {
       }
     );
 
-    const web3Data = await web3Response.json();
+    const data = await response.json();
 
-    if (!web3Data.success) {
-      throw new Error(web3Data.message || "Web3Forms failed.");
-    }
-
-    // Optional: Send to your own backend
-    const backendResponse = await fetch("/api/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const backendData = await backendResponse.json();
-
-    if (!backendResponse.ok) {
+    if (!data.success) {
       throw new Error(
-        backendData.error || "Backend save failed."
+        data.message || "Message sending failed."
       );
     }
 
     helperText.textContent =
-      "Thank you! Your message was sent and saved.";
+      "Thank you! Your message was sent successfully.";
 
     alert("Success! Your message has been sent.");
 
@@ -75,6 +54,7 @@ form.addEventListener("submit", async (event) => {
       error.message || "Something went wrong.";
 
     alert(error.message || "Something went wrong.");
+
   } finally {
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
